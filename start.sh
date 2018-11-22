@@ -4,6 +4,7 @@ apt-get -y update
 apt-get -y upgrade
 apt-get -y dist-upgrade
 curl -sSL https://get.docker.com | sh
+usermod -aG docker pi
 
 git clone https://github.com/docker/compose.git /home/pi/git/compose
 chown pi:pi -R /home/pi/git/compose
