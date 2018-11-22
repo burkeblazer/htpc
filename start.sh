@@ -10,5 +10,6 @@ apt-get update
 apt-get install docker-ce
 
 git clone https://github.com/docker/compose.git /home/pi/git/compose
+chown pi:pi -R /home/pi/git/compose
 cd /home/pi/git/compose
 git checkout release
