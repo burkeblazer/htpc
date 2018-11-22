@@ -16,3 +16,8 @@ cp dist/docker-compose-Linux-armv7l /usr/local/bin/docker-compose
 chown root:root /usr/local/bin/docker-compose
 chmod 0755 /usr/local/bin/docker-compose
 curl -L https://raw.githubusercontent.com/docker/compose/$(docker-compose version --short)/contrib/completion/bash/docker-compose -o /etc/bash_completion.d/docker-compose
+
+mkdir /home/pi/docker
+cd /home/pi/docker
+cp /home/pi/git/htpc/docker-compose.yml .
+docker-compose -f ~/docker/docker-compose.yml up -d
