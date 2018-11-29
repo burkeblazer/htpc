@@ -36,3 +36,11 @@ mkdir /home/pi/docker
 cd /home/pi/docker
 cp /home/pi/git/htpc/docker-compose.yml .
 #docker-compose -f ~/docker/docker-compose.yml up -d
+
+#sudo blkid and grab uuid
+#sudo umount -t ntfs-3g -o uid=1000,gid=996,umask=007 /dev/sda1 /mnt/external_hd
+#sudo cp /etc/fstab /etc/fstab.bak
+#sudo vi /etc/fstab
+#    UUID=xxxxxxx /mnt/external_hd ntfs-3g uid=1000,gid=996,umask=007 0 0
+#sudo vi /etc/dphys-swapfile
+#sudo vi /etc/dhcpcd.conf set static ip if need be
