@@ -45,5 +45,8 @@ cp /home/pi/git/htpc/docker-compose.yml .
 #sudo vi /etc/dphys-swapfile
 #sudo vi /etc/dhcpcd.conf set static ip if need be
 
+#Tools
+#docker exec -t [id] /bin/bash
+
 #Issues
 #Plex can't find server: https://support.plex.tv/articles/200288666-opening-plex-web-app/?_ga=2.13628725.369498810.1539346777-240592834.1534508048#toc-2
