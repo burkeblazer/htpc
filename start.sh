@@ -44,3 +44,6 @@ cp /home/pi/git/htpc/docker-compose.yml .
 #    UUID=xxxxxxx /mnt/external_hd ntfs-3g uid=1000,gid=996,umask=007 0 0
 #sudo vi /etc/dphys-swapfile
 #sudo vi /etc/dhcpcd.conf set static ip if need be
+
+#Issues
+#Plex can't find server: https://support.plex.tv/articles/200288666-opening-plex-web-app/?_ga=2.13628725.369498810.1539346777-240592834.1534508048#toc-2
