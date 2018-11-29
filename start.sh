@@ -22,11 +22,11 @@ curl -L https://raw.githubusercontent.com/docker/compose/$(docker-compose versio
 #Run id
 #Edit env variables
 #vi ~/.bashrc
-#PUID=1000
-#PGID=140
-#TZ="America/New_York"
-#USERDIR="/home/pi"
-#MYSQL_ROOT_PASSWORD="oncechildrenporchweiner"
+#export PUID=1000
+#export PGID=140
+#export TZ="America/New_York"
+#export USERDIR="/home/pi"
+#export MYSQL_ROOT_PASSWORD="oncechildrenporchweiner"
 
 #After you do the above you can uncomment the docker-compose and run that
 #Recommend putting that command in your bashrc with an alias
