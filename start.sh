@@ -17,7 +17,21 @@ chown root:root /usr/local/bin/docker-compose
 chmod 0755 /usr/local/bin/docker-compose
 curl -L https://raw.githubusercontent.com/docker/compose/$(docker-compose version --short)/contrib/completion/bash/docker-compose -o /etc/bash_completion.d/docker-compose
 
+#Make sure docker group was created and that pi belongs to it
+#sudo - su
+#Run id
+#Edit env variables
+#vi ~/.bashrc
+#PUID=1000
+#PGID=140
+#TZ="America/New_York"
+#USERDIR="/home/pi"
+#MYSQL_ROOT_PASSWORD="oncechildrenporchweiner"
+
+#After you do the above you can uncomment the docker-compose and run that
+#Recommend putting that command in your bashrc with an alias
+#Also, edit the actual docker-compose.yml file in /home/pi/docker so that it fits your needs
 mkdir /home/pi/docker
 cd /home/pi/docker
 cp /home/pi/git/htpc/docker-compose.yml .
-docker-compose -f ~/docker/docker-compose.yml up -d
+#docker-compose -f ~/docker/docker-compose.yml up -d
