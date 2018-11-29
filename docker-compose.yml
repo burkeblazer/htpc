@@ -99,9 +99,9 @@ services:
             - /etc/localtime:/etc/localtime:ro
             - ${USERDIR}/docker/transmission-vpn:/data
             - ${USERDIR}/docker/shared:/shared
-            - ${USERDIR}/Downloads:/data/watch
-            - ${USERDIR}/Downloads/completed:/data/completed
-            - ${USERDIR}/Downloads/incomplete:/data/incomplete
+            - ${MOUNTDIR}/Downloads:/data/watch
+            - ${MOUNTDIR}/Downloads/completed:/data/completed
+            - ${MOUNTDIR}/Downloads/incomplete:/data/incomplete
         environment:
             - LOCAL_NETWORK=192.168.1.0/24
             - PUID=${PUID}
@@ -119,8 +119,8 @@ services:
         container_name: "sabnzbd"
         volumes:
             - ${USERDIR}/docker/sabnzbd:/config
-            - ${USERDIR}/Downloads/completed:/downloads
-            - ${USERDIR}/Downloads/incomplete:/incomplete-downloads
+            - ${MOUNTDIR}/Downloads/completed:/downloads
+            - ${MOUNTDIR}/Downloads/incomplete:/incomplete-downloads
             - ${USERDIR}/docker/shared:/shared
         ports:
             - "8080:8080"
@@ -134,8 +134,8 @@ services:
         container_name: "radarr"
         volumes:
             - ${USERDIR}/docker/radarr:/config
-            - ${USERDIR}/Downloads/completed:/downloads
-            - ${USERDIR}/media/movies:/movies
+            - ${MOUNTDIR}/Downloads/completed:/downloads
+            - ${MOUNTDIR}/media/movies:/movies
             - "/etc/localtime:/etc/localtime:ro"
             - ${USERDIR}/docker/shared:/shared
         ports:
@@ -150,8 +150,8 @@ services:
         container_name: "sonarr"
         volumes:
             - ${USERDIR}/docker/sonarr:/config
-            - ${USERDIR}/Downloads/completed:/downloads
-            - ${USERDIR}/media/tvshows:/tv
+            - ${MOUNTDIR}/Downloads/completed:/downloads
+            - ${MOUNTDIR}/media/tvshows:/tv
             - "/etc/localtime:/etc/localtime:ro"
             - ${USERDIR}/docker/shared:/shared
         ports:
@@ -167,8 +167,8 @@ services:
         image: lsioarmhf/plex
         volumes:
             - ${USERDIR}/docker/plexms:/config
-            - ${USERDIR}/Downloads/plex_tmp:/transcode
-            - /media/media:/media
+            - ${MOUNTDIR}/Downloads/plex_tmp:/transcode
+            - ${MOUNTDIR}/media:/media
             - ${USERDIR}/docker/shared:/shared
         ports:
             - "32400:32400/tcp"
@@ -188,11 +188,11 @@ services:
             - PLEX_GID=${PGID}
             - ADVERTISE_IP="http://SERVER-IP:32400/"
     hydra:
-        image: "linuxserver/hydra"
+        image: "lsioarmhf/hydra"
         container_name: "hydra"
         volumes:
             - ${USERDIR}/docker/hydra:/config
-            - ${USERDIR}/Downloads:/downloads
+            - ${MOUNTDIR}/Downloads:/downloads
             - ${USERDIR}/docker/shared:/shared
         ports:
             - "5075:5075"
@@ -206,7 +206,7 @@ services:
         container_name: "jackett"
         volumes:
             - ${USERDIR}/docker/jackett:/config
-            - ${USERDIR}/Downloads/completed:/downloads
+            - ${MOUNTDIR}/Downloads/completed:/downloads
             - "/etc/localtime:/etc/localtime:ro"
             - ${USERDIR}/docker/shared:/shared
         ports:
