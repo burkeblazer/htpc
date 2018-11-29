@@ -25,7 +25,8 @@ curl -L https://raw.githubusercontent.com/docker/compose/$(docker-compose versio
 #export PUID=1000
 #export PGID=140
 #export TZ="America/New_York"
-#export USERDIR="/home/pi"
+#export USERDIR="/home/pi""
+#export MOUNTDIR="/mnt/external_hd"
 #export MYSQL_ROOT_PASSWORD="oncechildrenporchweiner"
 
 #After you do the above you can uncomment the docker-compose and run that
